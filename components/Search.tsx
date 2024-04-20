@@ -20,18 +20,17 @@ export default function Search() {
     async function getData() {
       const data = await getGeoData(ipAddress);
       setGeoData(data);
-      console.log("data", data);
     }
 
     getData();
   }, [trigger]);
 
   return (
-    <div className="relative h-[40vh] w-screen bg-hero-pattern bg-cover flex flex-col items-center pt-8">
+    <div className="relative bg-mobile-hero-pattern h-[40vh] w-screen sm:bg-hero-pattern bg-cover flex flex-col items-center pt-4 md:pt-8">
       <h1 className="font-medium text-white text-2xl">IP Address Tracker</h1>
       <form
         onSubmit={handleSubmit}
-        className="w-[540px] flex justify-center mt-8 rounded-lg overflow-hidden"
+        className="w-[90%] md:w-[540px] flex justify-center mt-4 md:mt-8 rounded-lg overflow-hidden"
       >
         <input
           type="text"
@@ -52,7 +51,7 @@ export default function Search() {
           />
         </button>
       </form>
-      <div className="absolute z-50 top-[80%] w-[70%] bg-white rounded-lg">
+      <div className="absolute z-50 top-[60%] w-[90%] md:top-[80%] md:w-[60%] bg-white rounded-lg">
         <IpDetails geoData={geoData} />
       </div>
     </div>

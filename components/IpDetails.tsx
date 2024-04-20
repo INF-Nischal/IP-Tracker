@@ -4,7 +4,7 @@ export default function IpDetails({ geoData }: any) {
   const data = geoData;
 
   return (
-    <div className="w-full flex justify-between py-6">
+    <div className="w-full flex flex-col gap-4 justify-between py-6 md:flex-row">
       {data && (
         <>
           <Cards title="IP Address" desciption={data?.ip} />
